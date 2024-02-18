@@ -12,6 +12,8 @@ let updateData = [];
 let readyForData = true;
 let isCommError = false;
 
+const dashboardContainer = document.getElementById('dashboardContainer');
+
 // Create gauges dynamically
 const mphGauge = createGauge(dashboardContainer, 'MPH', { lower: 0, upper: 120 }, { lower: 70, upper: 180 });
 const tachGauge = createGauge(dashboardContainer, 'Tach', { lower: 0, upper: 8000 }, { lower: 4800, upper: 5800 }, { lower: 5801, upper: 8000 });

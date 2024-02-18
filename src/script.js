@@ -1,3 +1,5 @@
+import { createGauge } from './gauge.js';
+
 // Example usage
 const dashboardContainer = document.getElementById('dashboardContainer');
 
