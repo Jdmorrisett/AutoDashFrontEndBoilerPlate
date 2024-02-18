@@ -15,8 +15,8 @@ export default function createGauge(container, name, range, warning, critical) {
     gaugeContainer.appendChild(gaugeLabel);
 
     function updateValue(value, precision = 0) {
-        const roundedValue = Number(value.toFixed(precision)).toString();
-        gaugeValue.innerText = roundedValue;
+        const roundedValue = Number(value).toFixed(precision);
+        gaugeValue.innerText = roundedValue.toString();
         updateColor(roundedValue);
     }
 
