@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 320px;
+    width: 1480px;
+    background-color: #333;
+}
+
+.gauge {
+    text-align: center;
+    color: #fff;
+}
+
+.gauge .value {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.gauge .label {
+    font-size: 1.2em;
+    margin-top: 5px;
+}

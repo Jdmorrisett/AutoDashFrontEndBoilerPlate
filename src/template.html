@@ -2,55 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-        <%= htmlWebpackPlugin.options.title %>
-    </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Car Dashboard</title>
 </head>
 
 <body>
-    <div id="info">
-        <p>RPM: <span id="rpm">0</span></p>
-        <p>Pedal Position: <span id="pedal_position">0</span></p>
+    <div class="dashboard" id="dashboardContainer">
+        <!-- Gauges will be dynamically added here -->
     </div>
-    <div id="tach_container">
-        <div class="tach">
-            <image class="" src="./assets/images/tach-background.png" />
-            <image id="tach_needle" src="./assets/images/needle.png" />
-            <image class="cap" src="./assets/images/cap.png" />
-        </div>
-    </div>
+
+    <script src="gauge.js"></script>
+    <script src="index.js"></script>
 </body>
-<style>
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        margin: 0;
-        overflow: hidden;
-        background: transparent;
-    }
-    
-    .tach>img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .tach {
-        position: relative;
-        width: 323px;
-        height: 318px;
-    }
-    
-    #tach_needle {
-        will-change: transform;
-        transition: transform 0.1s;
-    }
-</style>
 
 </html>
