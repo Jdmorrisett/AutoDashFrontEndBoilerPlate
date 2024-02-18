@@ -18,7 +18,7 @@ const dashboardContainer = document.getElementById('dashboardContainer');
 console.log(`This is it! ${dashboardContainer}`);
 
 // Create gauges dynamically
-const mphGauge = createGauge(dashboardContainer, 'MPH', { lower: 0, upper: 120 }, { lower: 70, upper: 180 });
+const mphGauge = createGauge(dashboardContainer, 'MPH', { lower: 0, upper: 220 }, { lower: 0, upper: 120 }, { lower: 70, upper: 180 });
 const tachGauge = createGauge(dashboardContainer, 'Tach', { lower: 0, upper: 8000 }, { lower: 4800, upper: 5800 }, { lower: 5801, upper: 8000 });
 const oilPressureGauge = createGauge(dashboardContainer, 'Oil Pressure', { lower: 0, upper: 100 }, { lower: 55, upper: 64 }, { lower: 65, upper: 150 });
 const engineTempGauge = createGauge(dashboardContainer, 'Engine Temp', { lower: 0, upper: 280 }, { lower: 0, upper: 120 }, { lower: 220, upper: 280 });
@@ -42,11 +42,11 @@ const tick = () => {
     // tachometer.update(updateData[DATA_MAP.RPM.id], isCommError);
 
     // Update gauges
-    tachGauge.updateValue(updateData[DATA_MAP.RPM.id]);
-    oilPressureGauge.updateValue(updateData[DATA_MAP.OIL_PRESSURE.id]);
-    engineTempGauge.updateValue(updateData[DATA_MAP.CTS.id]);
-    fuelPressureGauge.updateValue(updateData[DATA_MAP.FUEL_LEVEL.id]);
-    voltageGauge.updateValue(updateData[DATA_MAP.BATT_VOLTAGE.id]);
+    tachGauge.updateValue(updateData[DATA_MAP.RPM.id], 0);
+    oilPressureGauge.updateValue(updateData[DATA_MAP.OIL_PRESSURE.id], 1);
+    engineTempGauge.updateValue(updateData[DATA_MAP.CTS.id], 0);
+    fuelPressureGauge.updateValue(updateData[DATA_MAP.FUEL_LEVEL.id], 1);
+    voltageGauge.updateValue(updateData[DATA_MAP.BATT_VOLTAGE.id], 1);
 
     // //update the info with RPM data
     // let info = document.getElementById("info");

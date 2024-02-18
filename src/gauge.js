@@ -5,7 +5,7 @@ export default function createGauge(container, name, range, warning, critical) {
 
     const gaugeValue = document.createElement('div');
     // set an initial value
-    gaugeValue.innerText = "0";
+    gaugeValue.innerText = "0.0";
     gaugeValue.classList.add('value');
     gaugeContainer.appendChild(gaugeValue);
 
@@ -14,9 +14,10 @@ export default function createGauge(container, name, range, warning, critical) {
     gaugeLabel.innerText = name;
     gaugeContainer.appendChild(gaugeLabel);
 
-    function updateValue(value) {
-        gaugeValue.innerText = value;
-        updateColor(value);
+    function updateValue(value, precision = 0) {
+        const roundedValue = Number(value.toFixed(precision)).toString();
+        gaugeValue.innerText = roundedValue;
+        updateColor(roundedValue);
     }
 
     function updateColor(value) {
