@@ -1,4 +1,4 @@
-export function createGauge(container, name, range, warning, critical) {
+export default function createGauge(container, name, range, warning, critical) {
     const gaugeContainer = document.createElement('div');
     gaugeContainer.classList.add('gauge');
     container.appendChild(gaugeContainer);
@@ -31,7 +31,6 @@ export function createGauge(container, name, range, warning, critical) {
         updateValue: updateValue
     };
 }
-
 
 
 // // Reusable gauge module

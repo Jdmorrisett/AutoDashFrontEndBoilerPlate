@@ -1,7 +1,7 @@
 "use strict";
 import { DATA_MAP, WARNING_KEYS } from "./js/common/dataMap";
 // import tachometer from "./js/tachometer";
-import { createGauge } from "./gauge"; // Assuming you have the createGauge function in the gauge.js file
+import createGauge from "./gauge"; // Assuming you have the createGauge function in the gauge.js file
 
 const dataWorker = new Worker(
     new URL("./js/comms/drawDataWorker.js",
