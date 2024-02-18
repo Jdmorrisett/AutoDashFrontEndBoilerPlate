@@ -3,6 +3,8 @@ import { DATA_MAP, WARNING_KEYS } from "./js/common/dataMap";
 // import tachometer from "./js/tachometer";
 import createGauge from "./gauge"; // Assuming you have the createGauge function in the gauge.js file
 
+console.log("Hello from index.js");
+
 const dataWorker = new Worker(
     new URL("./js/comms/drawDataWorker.js",
         import.meta.url)
@@ -13,6 +15,7 @@ let readyForData = true;
 let isCommError = false; // True if there is an issue communicating with ECU server 
 
 const dashboardContainer = document.getElementById('dashboardContainer');
+console.log(`This is it! ${dashboardContainer}`);
 
 // Create gauges dynamically
 const mphGauge = createGauge(dashboardContainer, 'MPH', { lower: 0, upper: 120 }, { lower: 70, upper: 180 });
@@ -95,3 +98,5 @@ dataWorker.onmessage = (event) => {
 };
 
 initializeApp();
+
+module.exports = {};

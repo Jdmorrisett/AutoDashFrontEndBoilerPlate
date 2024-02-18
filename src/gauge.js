@@ -4,6 +4,8 @@ export default function createGauge(container, name, range, warning, critical) {
     container.appendChild(gaugeContainer);
 
     const gaugeValue = document.createElement('div');
+    // set an initial value
+    gaugeValue.innerText = "0";
     gaugeValue.classList.add('value');
     gaugeContainer.appendChild(gaugeValue);
 
